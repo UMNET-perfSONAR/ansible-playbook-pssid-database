@@ -7,4 +7,4 @@ This is an Ansible Playbook for deploying [pSSID-database](https://github.com/UM
 1. `git clone` this repository.
 1. Run `ansible-galaxy install -r requirements.yml` to get the Playbook's dependencies.
 1. Run `ansible-playbook playbook.yml -i 1.1.1.1,` to flash machine `1.1.1.1`. Note the trailing comma.
-  * Optionally append ` -e 'destination=/my/path repository=git://my-repo'` to the command to override the default destination path and remote repository.
+    * Optionally append ` -e 'destination=/my/path repository=git://my-repo'` to the command to override the default destination path and remote repository.
