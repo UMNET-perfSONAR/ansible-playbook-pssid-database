@@ -1,4 +1,7 @@
 - hosts: all
+  vars:
+    destination: /opt/pSSID-database
+    repository: https://github.com/UMNET-perfSONAR/pSSID-database
 
   roles:
     - geerlingguy.docker
@@ -6,16 +9,21 @@
   tasks:
     - name: clone pSSID-database from the git server
       git:
-        dest: /opt/pssid-database
-        repo: https://github.com/UMNET-perfSONAR/pSSID-database
-    - name: generate .env file
+        dest: "{{ destination }}"
+        repo: "{{ repository }}"
+        force: true
+    - name: generate .env file and copy to target
       copy:
         src: ./.env
-        dest: /opt/pssid-database/.env
+        dest: "{{ destination }}/.env"
         force: true
         decrypt: true
-    - name: run `docker-compose up -d`
+    - name: run `docker-compose down -v` to reset any volumes (perhaps unnecessary)
       command:
-        chdir: /opt/pssid-database
+        chdir: "{{ destination }}"
+        cmd: docker-compose down -v
+    - name: bring up the stack
+      command:
+        chdir: "{{ destination }}"
         cmd: docker-compose up -d
 
