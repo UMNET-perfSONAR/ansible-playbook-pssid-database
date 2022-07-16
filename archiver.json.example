@@ -1,0 +1,8 @@
+{
+  "archiver": "http",
+  "data": {
+      "schema": 2,
+      "_url": "http://1.1.1.1:5001",
+      "op": "put"
+  }
+}
