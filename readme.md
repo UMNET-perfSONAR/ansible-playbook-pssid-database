@@ -6,7 +6,7 @@ This is an Ansible Playbook for deploying [pSSID-database](https://github.com/UM
 
 ```
 git clone https://github.com/UMNET-perfSONAR/ansible-playbook-pssid-database.git
-cd ansible-playbook-pssid-datbase
+cd ansible-playbook-pssid-database
 ```
 
 ```
