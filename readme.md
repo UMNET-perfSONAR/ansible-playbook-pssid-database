@@ -2,6 +2,37 @@
 
 This is an Ansible Playbook for deploying [pSSID-database](https://github.com/UMNET-perfSONAR/pSSID-database), an [ELK stack](https://www.elastic.co/what-is/elk-stack) configured for usage by [pSSID](https://github.com/UMNET-perfSONAR/pSSID), to a server. It installs Docker and then the ELK stack itself.
 
+## Clone this playbook
+
+```
+git clone https://github.com/UMNET-perfSONAR/ansible-playbook-pssid-database.git
+cd ansible-playbook-pssid-datbase
+```
+
+```
+cp .env.example .env
+vi .env
+ansible-vault encrypt .env
+```
+
+## Getting Dependencies
+
+```
+ansible-galaxy install -r requirements.yml
+```
+
+```
+ansible-playbook playbook.yml \
+  -i IP_ADDR,
+```
+
+```
+cp archiver.json.example archiver.json
+vi archiver.json
+```
+
+
+
 ## Usage
 
 (`1.1.1.1` is used in place of the database server's IP address throughout.)
