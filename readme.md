@@ -12,6 +12,9 @@ cd ansible-playbook-pssid-database
 ```
 cp .env.example .env
 vi .env
+```
+
+```
 ansible-vault encrypt .env
 ```
 
